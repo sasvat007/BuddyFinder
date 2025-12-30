@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import sasvar.example.chatbot.JsonData;
+import sasvar.example.chatbot.Database.JsonData;
+import sasvar.example.chatbot.Exception.ProfileNotFoundException;
 import sasvar.example.chatbot.Repository.JsonDataRepository;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
@@ -197,7 +198,7 @@ Resume Text:
 
     public JsonData getById(Long id) {
         return jsonDataRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Profile not found"));
+                .orElseThrow(() -> new ProfileNotFoundException(id));
     }
 
     public void sendjsontodjango(Long id){
