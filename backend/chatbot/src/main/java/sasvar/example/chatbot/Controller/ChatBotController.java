@@ -12,7 +12,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin
 public class ChatBotController {
 
     private final ChatBotService chatBotService;
