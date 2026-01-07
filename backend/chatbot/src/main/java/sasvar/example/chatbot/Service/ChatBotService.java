@@ -371,7 +371,7 @@ Resume Text:
             RestTemplate restTemplate = new RestTemplate();
 
             ResponseEntity<String> response = restTemplate.postForEntity(
-                    "https://fundamentally-historiographic-leif.ngrok-free.dev/api/resume/json/",
+                    "http://localhost:31000/api/resume/json/",
                     request,
                     String.class
             );
@@ -447,7 +447,7 @@ Resume Text:
             RestTemplate restTemplate = new RestTemplate();
 
             ResponseEntity<String> response = restTemplate.postForEntity(
-                    "https://fundamentally-historiographic-leif.ngrok-free.dev/api/project/embed/",
+                    "http://localhost:31001/api/project/embed/",
                     request,
                     String.class
             );
